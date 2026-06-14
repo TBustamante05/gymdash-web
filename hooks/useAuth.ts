@@ -7,7 +7,7 @@ import { useMutation } from "@tanstack/react-query"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
 
-interface LoginData {
+export interface LoginData {
   username: string
   password: string
 }
