@@ -8,8 +8,14 @@ export const metadata: Metadata = {
 
 export default function RegisterPage() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#0D121B]">
-      <div className="w-full max-w-md px-6 bg-background px-8 pt-15 pb-35 rounded-lg border-1 border-border/50">
+    <div className="min-h-screen flex items-center justify-center bg-[#0D121B] px-4">
+      <div
+        className="w-full max-w-md bg-background rounded-lg border border-border/50
+                  flex flex-col justify-center
+                  px-6 py-8
+                  sm:px-8 sm:py-10
+                  sm:min-h-[822px] sm:max-h-[822px]"
+      >
         <Dumbbell
           size={60}
           strokeWidth={2.5}
@@ -24,10 +30,7 @@ export default function RegisterPage() {
 
         <p className="text-center text-sm text-muted-foreground mt-6">
           ¿Ya tienes cuenta?{" "}
-          <a
-            href="/login"
-            className="text-primary font-medium hover:underline"
-          >
+          <a href="/login" className="text-primary font-medium hover:underline">
             Inicia sesión
           </a>
         </p>

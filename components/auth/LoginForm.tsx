@@ -47,10 +47,10 @@ function LoginForm() {
           <input
             id="username"
             name="username"
-            // type="text"
+            type="text"
             value={formData.username}
             onChange={handleChange}
-            placeholder="tu@email.com"
+            placeholder="Usuario123"
             required
             disabled={isLoggingIn} // desactiva mientras carga
             className="w-full  
@@ -75,7 +75,7 @@ function LoginForm() {
           <input
             id="password"
             name="password"
-            // type={showPassword ? 'text' : 'password'}
+            type={showPassword ? 'text' : 'password'}
             value={formData.password}
             onChange={handleChange}
             placeholder="••••••••"
@@ -112,7 +112,8 @@ function LoginForm() {
         className="w-full mt-7 py-4 px-4 bg-primary text-primary-foreground
                       rounded-md font-medium
                       hover:bg-primary/90 transition-colors
-                      disabled:opacity-50 disabled:cursor-not-allowed"
+                      disabled:opacity-50 disabled:cursor-not-allowed
+                      cursor-pointer"
       >
         {/* Cambia el texto según el estado */}
         {isLoggingIn ? "Iniciando sesión..." : "Iniciar sesión"}

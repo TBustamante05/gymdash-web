@@ -199,7 +199,8 @@ function RegisterForm() {
         className="w-full mt-7 py-4 px-4 bg-primary text-primary-foreground
                       rounded-md font-medium
                       hover:bg-primary/90 transition-colors
-                      disabled:opacity-50 disabled:cursor-not-allowed"
+                      disabled:opacity-50 disabled:cursor-not-allowed
+                      cursor-pointer"
       >
         {/* Cambia el texto según el estado */}
         {isRegistering ? "Creando cuenta..." : "Crear cuenta"}
