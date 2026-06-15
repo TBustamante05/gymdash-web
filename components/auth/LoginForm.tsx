@@ -1,6 +1,6 @@
 "use client";
 import { useAuth } from "@/hooks/useAuth";
-import { Eye, EyeOff, Lock, Mail } from "lucide-react";
+import { Eye, EyeOff, Lock, User } from "lucide-react";
 import { useState } from "react";
 
 function LoginForm() {
@@ -43,7 +43,7 @@ function LoginForm() {
           Usuario
         </label>
         <div className="rounded-md border-1 border-border/50 flex gap-3 items-center px-4 py-3.5 w-full bg-input mt-1">
-          <Mail className="text-border" />
+          <User className="text-border" />
           <input
             id="username"
             name="username"
