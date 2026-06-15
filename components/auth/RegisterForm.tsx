@@ -202,7 +202,7 @@ function RegisterForm() {
                       disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {/* Cambia el texto según el estado */}
-        {isRegistering ? "Iniciando sesión..." : "Crear cuenta"}
+        {isRegistering ? "Creando cuenta..." : "Crear cuenta"}
       </button>
     </form>
   );
