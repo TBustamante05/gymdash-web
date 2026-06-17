@@ -5,6 +5,8 @@ import {
   ChevronDown,
   Dumbbell,
   Home,
+  PanelLeftClose,
+  PanelLeftOpen,
   SquareChartGantt,
   Timer,
 } from "lucide-react";
@@ -47,7 +49,7 @@ const SideBarItem = ({ name, icon, route }: SideBarItemProp) => {
 };
 
 function Sidebar() {
-  const { collapsed } = useSidebar();
+  const { collapsed, toggle } = useSidebar();
   const { user } = useAuth();
 
   const initials = user?.username
@@ -68,16 +70,34 @@ function Sidebar() {
                      border-e-muted-foreground/10 transition-all duration-300
                      ${collapsed ? "w-20" : "w-64"}`}
     >
-      {/* Logo */}
+      {/* Toggle + Logo */}
       <div
-        className={`flex items-center pb-5 border-2 border-transparent
+        className={`flex pb-5 border-2 border-transparent
                  border-b-muted-foreground/10 transition-all duration-300
-                 ${collapsed ? "justify-center px-0" : "px-7 gap-5"}`}
+                 ${collapsed
+                    ? "flex-col items-center gap-3 px-0"
+                    : "flex-row items-center justify-between gap-2 px-5"}`}
       >
-        <Dumbbell className="text-primary h-10 w-10 rotate-45 shrink-0" />
-        {!collapsed && (
-          <h1 className="text-3xl font-semibold whitespace-nowrap">GymDash</h1>
-        )}
+        <div className={`flex items-center ${collapsed ? "order-2" : "order-1 gap-3"}`}>
+          <Dumbbell className="text-primary h-10 w-10 rotate-45 shrink-0" />
+          {!collapsed && (
+            <h1 className="text-2xl font-semibold whitespace-nowrap">GymDash</h1>
+          )}
+        </div>
+        <button
+          onClick={toggle}
+          className={`p-2 rounded-md text-muted-foreground shrink-0
+                     hover:bg-primary/10 hover:text-primary
+                     transition-colors
+                     ${collapsed ? "order-1" : "order-2"}`}
+          title={collapsed ? "Expandir sidebar" : "Colapsar sidebar"}
+        >
+          {collapsed ? (
+            <PanelLeftOpen className="cursor-pointer" />
+          ) : (
+            <PanelLeftClose className="cursor-pointer" />
+          )}
+        </button>
       </div>
 
       {/* Contenido */}
@@ -91,7 +111,7 @@ function Sidebar() {
           ))}
         </div>
 
-        {/* Footer — tu diseño original intacto */}
+        {/* Footer */}
         <footer
           className={`mt-auto px-3 py-4 rounded-md
                             flex items-center gap-3 cursor-pointer

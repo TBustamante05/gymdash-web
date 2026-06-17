@@ -1,30 +1,13 @@
 "use client";
 
-import { Bell, PanelLeftClose, PanelLeftOpen, Plus } from "lucide-react";
-import { useSidebar } from "@/context/SidebarContext";
+import { Bell, Plus } from "lucide-react";
 import MainButton from "@/components/ui/MainButton";
 
 export default function HomePage() {
-  const { collapsed, toggle } = useSidebar();
-
   return (
     <div className="py-3">
-      {/* Botón de toggle — esquina superior izquierda */}
       <div className="flex items-start justify-between ">
         <div className="flex items-center gap-4">
-          <button
-            onClick={toggle}
-            className="p-2 rounded-md text-muted-foreground
-                               hover:bg-primary/10 hover:text-primary
-                               transition-colors"
-            title={collapsed ? "Expandir sidebar" : "Colapsar sidebar"}
-          >
-            {collapsed ? (
-              <PanelLeftOpen className="w-6 h-6 cursor-pointer" />
-            ) : (
-              <PanelLeftClose className="w-6 h-6 cursor-pointer" />
-            )}
-          </button>
           <h2 className="text-2xl font-bold">
             ¡Bienvenido de nuevo, Thiago! 💪
           </h2>
