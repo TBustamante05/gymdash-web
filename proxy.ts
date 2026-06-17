@@ -15,7 +15,7 @@ export function proxy(request: NextRequest) {
 
     // Evita que un usuario logueado vea el login de nuevo
     if (token && isAuthRoute) {
-        return NextResponse.redirect(new URL('/dashboard', request.url))
+        return NextResponse.redirect(new URL('/home', request.url))
     }
 
     return NextResponse.next()
@@ -24,7 +24,7 @@ export function proxy(request: NextRequest) {
 // qué rutas ejecutar
 export const config = {
     matcher: [
-        '/dashboard/:path*',
+        '/home/:path*',
         '/routines/:path*',
         '/progress/:path*',
         '/calendar/:path*',

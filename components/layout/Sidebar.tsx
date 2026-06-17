@@ -49,7 +49,10 @@ const SideBarItem = ({ name, icon, route }: SideBarItemProp) => {
 function Sidebar() {
   const { collapsed } = useSidebar();
   const { user } = useAuth();
-  console.log("Usuario en Sidebar:", user);
+
+  const initials = user?.username
+  ? user.username.slice(0, 2).toUpperCase()
+  : ""
 
   const items: SideBarItemProp[] = [
     { name: "Inicio", icon: <Home />, route: "/home" },
@@ -101,7 +104,7 @@ function Sidebar() {
               className="grayscale"
             />
             <AvatarFallback>
-              {user?.username.slice(0, 2).toUpperCase()}
+              {initials || "U"}
             </AvatarFallback>
           </Avatar>
           <div

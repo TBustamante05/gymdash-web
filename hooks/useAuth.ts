@@ -5,7 +5,7 @@ import { getToken, getUser, removeToken, setToken, setUser } from "@/lib/auth"
 import { AuthResponse, User } from "@/types"
 import { useMutation } from "@tanstack/react-query"
 import { useRouter } from "next/navigation"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 export interface LoginData {
   username: string
@@ -20,7 +20,12 @@ export function useAuth() {
   const router = useRouter();
 
   // Inicializar con los datos que ya están en la cookie
-  const [user, setUserState] = useState<User | null>(getUser);
+  const [user, setUserState] = useState<User | null>(null);
+
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- hidratamos desde localStorage/cookie, que no existe en SSR
+    setUserState(getUser());
+  }, []);
 
   // Login
   const {
@@ -33,7 +38,7 @@ export function useAuth() {
       setToken(token)
       setUser({ username, role})
       setUserState({ username, role })
-      router.push("/dashboard")
+      router.push("/home")
     }
   })
 
@@ -49,7 +54,7 @@ export function useAuth() {
       setUser({ username, role })
       setUserState({ username, role })
 
-      router.push("/dashboard");
+      router.push("/home");
     }
   })
 
