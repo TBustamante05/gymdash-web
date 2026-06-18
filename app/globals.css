@@ -48,19 +48,19 @@
   --radius-btn: 0.65rem;
 
   /* Fondo */
-  --dark-background: #081119;
-  --background: #121922;
+  --dark-background: #0F131F;
+  --background: #161B26;
   --foreground: #f8fafc;
 
   /* Cards */
-  --card: #101c26;
+  --card: #161B26;
   --card-foreground: #ffffff;
 
   --popover: #101c26;
   --popover-foreground: #ffffff;
 
   /* PRINCIPAL → Verde */
-  --primary: #49bf45;
+  --primary: #2ABF40;
   --primary-foreground: #ffffff;
 
   /* Secundario */
@@ -93,7 +93,7 @@
   --chart-5: #101c26;
 
   /* Sidebar */
-  --sidebar: #121922;
+  --sidebar: #161B26;
   --sidebar-foreground: #ffffff;
 
   --sidebar-primary: #49bf45;

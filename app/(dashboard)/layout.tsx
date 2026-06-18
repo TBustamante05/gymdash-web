@@ -16,7 +16,7 @@ export default function DashboardLayout({
     <SidebarProvider>
       <div className="flex h-screen bg-background overflow-hidden">
         <Sidebar />
-        <main className="flex-1 overflow-y-auto p-6 bg-dark-background">{children}</main>
+        <main className="flex-1 overflow-y-auto py-6 px-12 bg-dark-background">{children}</main>
       </div>
     </SidebarProvider>
   );

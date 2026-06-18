@@ -66,8 +66,7 @@ function Sidebar() {
 
   return (
     <div
-      className={`h-screen flex flex-col py-7 border-2 border-transparent
-                     border-e-muted-foreground/10 transition-all duration-300
+      className={`h-screen flex flex-col py-7  transition-all duration-300
                      ${collapsed ? "w-20" : "w-64"}`}
     >
       {/* Toggle + Logo */}
@@ -128,11 +127,11 @@ function Sidebar() {
             </AvatarFallback>
           </Avatar>
           <div
-            className={`overflow-hidden whitespace-nowrap transition-all duration-300
+            className={`w-full overflow-hidden whitespace-nowrap transition-all duration-300
                            ${collapsed ? "w-0 opacity-0" : "w-auto opacity-100"}`}
           >
             <p>{user?.username ?? "Usuario"}</p>
-            <div className="flex text-sm items-center justify-between text-muted-foreground">
+            <div className="flex text-sm items-center w-full justify-between text-muted-foreground">
               <span>Ver perfil</span>
               <ChevronDown className="h-5 w-5" />
             </div>
