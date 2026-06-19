@@ -1,4 +1,5 @@
 import RoutineCard from "@/components/routines/RoutineCard";
+import RoutinesList from "@/components/routines/RoutinesList";
 import MainButton from "@/components/ui/MainButton";
 import { Routine } from "@/types";
 import { Plus } from "lucide-react";
@@ -62,22 +63,7 @@ function RoutinesPage() {
   ];
   return (
     <div className="py-3">
-      <div className="flex items-center justify-between ">
-        <div className="flex items-center gap-4">
-          <h2 className="text-4xl font-bold">Mis Rutinas</h2>
-        </div>
-        <MainButton title="Nueva Rutina" icon={<Plus />} className="px-8" />
-      </div>
-      <p className="text-muted-foreground text-lg">
-        Todas tus rutinas de entrenamiento
-      </p>
-
-      {/* Rutinas */}
-      <div className="mt-4 space-y-4">
-        {routinesMockup.map((routine) => (
-          <RoutineCard key={routine.id} {...routine} />
-        ))}
-      </div>
+      <RoutinesList />
     </div>
   );
 }
