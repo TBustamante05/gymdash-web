@@ -68,7 +68,7 @@ function RoutineModal({ open, onClose }: Props) {
               placeholder="Ej: Rutina de Fuerza"
               required
               disabled={isCreating}
-              className="w-full rounded-md border border-border/50 bg-input px-4 py-3
+              className="w-full rounded-md border border-border/30 bg-input px-4 py-3
                          text-sm outline-none
                          disabled:opacity-50 disabled:cursor-not-allowed"
             />
@@ -85,7 +85,7 @@ function RoutineModal({ open, onClose }: Props) {
               placeholder="Ej: Enfocada en el desarrollo de la fuerza muscular"
               rows={3}
               disabled={isCreating}
-              className="w-full rounded-md border border-border/50 bg-input px-4 py-3
+              className="w-full rounded-md border border-border/30 bg-input px-4 py-3
                          text-sm outline-none resize-none
                          disabled:opacity-50 disabled:cursor-not-allowed"
             />

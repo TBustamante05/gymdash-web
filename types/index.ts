@@ -5,8 +5,9 @@ export interface Exercise {
     reps: number
     weight: number
     restTime: number
+    position: number
 }
-
+// exercise request -> 
 export interface Routine {
     id: number
     name: string
