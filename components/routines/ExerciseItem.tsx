@@ -1,7 +1,7 @@
 import { Exercise } from "@/types";
 import { useSortable } from "@dnd-kit/sortable";
 import { CSS } from "@dnd-kit/utilities";
-import { Ellipsis, EllipsisVertical, GripVertical } from "lucide-react";
+import { EllipsisVertical, GripVertical } from "lucide-react";
 
 const ExerciseItem = (exercise: Exercise) => {
   const {

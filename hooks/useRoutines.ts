@@ -5,7 +5,7 @@ import api from "@/lib/api";
 import { Routine } from "@/types";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 
-interface RoutineData {
+export interface RoutineData {
   name: string
   description: string
 }
